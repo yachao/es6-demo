@@ -1,0 +1,21 @@
+{
+  "name": "es6-demo",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "webpack --watch --colors --progress --config webpack.config.js",
+    "server": "node server.js"
+  },
+  "author": "zc",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.3.26",
+    "babel-loader": "^6.2.0",
+    "express": "^4.13.3",
+    "webpack": "^1.12.9"
+  },
+  "dependencies": {
+    "es6-promise": "^3.0.2",
+    "immutable": "^3.7.6"
+  }
+}
