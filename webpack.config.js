@@ -3,8 +3,8 @@ module.exports = {
 		app: './js/main.js'
 	},
 	output: {
-		path: __dirname + '/dest',
-		publicPath: '/dest/',
+		path: __dirname + '/dist',
+		publicPath: '/dist/',
 		filename: '[name].js'
 	},
 	resolve: {
