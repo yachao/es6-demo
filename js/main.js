@@ -1,6 +1,9 @@
 //promises
-var url = 'user/11';
+var uid = 12;
+var url = `user/${uid}`;
 
+
+//Fetch
 fetch(url).then(function(res){
 	if(res.ok){
 		res.json().then(function(data){
@@ -9,21 +12,24 @@ fetch(url).then(function(res){
 	}
 });
 
-// var u = new URLSearchParams();
-// u.append('method', 'flickr.interestingness.getList');
-// u.append('api_key', '<insert api key here>');
-// u.append('format', 'json');
-// u.append('nojsoncallback', '1');
+//Templete
+var name = "Bob", time = "today";
+var html = `Hello ${name}, how are you ${time}?`;
+document.getElementById('show').innerHTML = html;
 
-// var apiCall = fetch('https://api.flickr.com/services/rest?' + u);
 
-// apiCall.then(function(response) {
-//   return response.json().then(function(json) {
-//     // photo is a list of photos.
-//     return json.photos.photo;
-//   });
-// }).then(function(photos) {
-//   photos.forEach(function(photo) {
-//     console.log(photo.title);
-//   });
-// });
+//Generators
+function* numbers () {
+  yield 1;
+  yield 2;
+  return 3;
+}
+
+var g = numbers();
+console.log(g.next());
+// <- { done: false, value: 1 }
+console.log(g.next());
+// <- { done: false, value: 2 }
+console.log(g.next());
+// <- { done: true, value: 3 }
+
