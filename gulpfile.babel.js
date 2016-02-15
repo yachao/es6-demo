@@ -14,7 +14,7 @@ const paths = {
 
 let sftpOpt = (auth, path) => {
 	return {
-  		host: '172.16.7.251',
+  		host: '0.0.0.0',
   		auth: auth,
   		remotePath: path
   	}
@@ -32,8 +32,8 @@ gulp.task('css', () => {
 
 gulp.task('uploadcss', () => {
   return gulp.src('./dist/css/*')
-  	.pipe(sftp(sftpOpt('keyLX', `17216004010 ftp (172.16.4.10)/css_40017_cn_train/promote/${activityName}`)))
-  	.pipe(sftp(sftpOpt('keyLX', `17216004011 ftp (172.16.4.11)/css_40017_cn_train/promote/${activityName}`)))
+  	.pipe(sftp(sftpOpt('xxx', `17216004010 ftp (172.16.4.10)/css_40017_cn_train/promote/${activityName}`)))
+  	.pipe(sftp(sftpOpt('xxx', `17216004011 ftp (172.16.4.11)/css_40017_cn_train/promote/${activityName}`)))
 });
 
 // use default task to launch Browsersync and watch JS files
