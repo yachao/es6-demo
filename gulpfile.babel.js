@@ -1,11 +1,9 @@
 import gulp from 'gulp';
-import browserSync from 'browser-sync';
 import concat from 'gulp-concat';
 import minifyCss from 'gulp-minify-css';
 import rename from 'gulp-rename';
 import replace from 'gulp-replace';
 
-const reload = browserSync.reload;
 const activityName = 'xxx';
 const paths = {
 	html: ['*.html'],
@@ -36,21 +34,4 @@ gulp.task('uploadcss', () => {
   	.pipe(sftp(sftpOpt('key', `ftpname/path/${activityName}`)))
 });
 
-// use default task to launch Browsersync and watch JS files
-gulp.task('serve', ['css'], () => {
-    // Serve files from the root of this project
-    browserSync({
-	    notify: false,
-	    server: {
-	            baseDir: './'
-	        },
-	    port: 3333
-	});
-
-    // add browserSync.reload to the tasks array to make
-    // all browsers reload after tasks are complete.
-    gulp.watch(paths.css, ['css', reload]);
-    gulp.watch(paths.html, reload);
-});
-
-gulp.task('default', ['serve']);
+gulp.task('default', ['css']);
